@@ -1,0 +1,19 @@
+A Basic Chat Application made with Django Channels
+
+- "channels" use ASGI (Asynchronous Server Gateway Interface) and allow duplex
+	(bidirectional) commuincation (like cell phones) as compared to http which is unidirectional.
+
+- Synchronous Communication: 
+	A commuincation between client and server in which once the requests have been answered by the server, no further communication takes place until the user's next input.
+
+- Asynchronous Communication:
+	Multiple asynchronous communications between client and server may occur simultaneously or in parallel with one another
+
+- async_to_sync():
+	Takes an async function and returns a sync function that wraps it.
+
+- sync_to_async():
+	Takes a sync function and returns an async function that wraps it.
+
+- For details about async await take a look at 'concurrency' note on 'Python codes'
+	or visit the link at - https://realpython.com/async-io-python/

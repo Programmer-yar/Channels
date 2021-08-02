@@ -1,4 +1,5 @@
 """ URLs for ASGI applications """
+
 from django.urls import re_path
 
 from . import consumers
