@@ -3,6 +3,13 @@ A Basic Chat Application made with Django Channels
 - "channels" use ASGI (Asynchronous Server Gateway Interface) and allow duplex
 	(bidirectional) commuincation (like cell phones) as compared to http which is unidirectional.
 
+- Web Socket:
+	- A Client server communication Protocol just like HTTP
+	- bidirectional, full duplex protocol
+	- Stateful Protocol: connection between client and server remains alive
+		untill termintes by either
+	- start with 'wss://' or 'ws://' just like 'http://' or 'https://'
+
 - Synchronous Communication: 
 	A commuincation between client and server in which once the requests have been answered by the server, no further communication takes place until the user's next input.
 
