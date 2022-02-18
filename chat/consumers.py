@@ -10,7 +10,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         -> contains a lot of information including room_name,
             user data, authentication data
         -> in channels, middlewares add data to 'self.scope' the same way
-            middlewares add datat to 'request' object in django
+            middlewares add data to 'request' object in django
         """
         self.room_name = self.scope['url_route']['kwargs']['room_name']
         self.room_group_name = f'chat_{self.room_name}' #'chat_%s' % self.room_name
@@ -35,8 +35,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
-        print(message, self.room_name, self.room_group_name)
-        print(self.scope['user'].is_authenticated)
+        # print(message, self.room_name, self.room_group_name)
+        # print(self.scope['user'].is_authenticated)
 
         # Send message to room group
         await self.channel_layer.group_send(
