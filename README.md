@@ -1,2 +1,17 @@
-# Channels
-This project was made following official tutorial from channels documentation. It was made to get an idea of how ASGI application work in django.
+# Chat app (Django Channels)
+- To develop a simple  chat app following tutorial at https://channels.readthedocs.io/en/stable/tutorial/index.html
+- Understand ASGI and Websockets.
+- Follow the documentation and build on top
+
+## Initial Setup:
+```
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+Setup redis-server and enter url in 'settings.py' in dict 'CHANNEL_LAYERS'
+
+## TODO:
+- User Authentication
+- Get or create Chat room (for 2 people only)
+- Save messages to database

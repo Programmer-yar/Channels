@@ -14,7 +14,9 @@
     <script id="room-name" type="application/json">{"room_name": <value>}
     </script>
     -->
+    {% if user.is_authenticated %}
     {{ room_name|json_script:"room-name" }}
+    {% endif %}
     <script>
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
 

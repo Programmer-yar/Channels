@@ -22,7 +22,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
             )
 
         # if not called the connection will be rejected and closed
-        await self.accept()
+        if self.scope['user'].is_authenticated:
+            await self.accept()
 
     async def disconnect(self, close_code):
         # Leave room group
