@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Added by me
-    'chat.apps.ChatConfig',
+    'chat',
     'channels',
 ]
 

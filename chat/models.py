@@ -14,3 +14,4 @@ class ChatHistory(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE,
         related_name='chats')
     message = models.TextField()
+    
