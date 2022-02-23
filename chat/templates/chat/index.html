@@ -8,7 +8,13 @@
     <form method="POST">
         {% csrf_token %}
         What chat room would you like to enter?<br>
-        <input type="text" name="room_name">
+        <input type="text" name="room_name" required>
+        <select name="users" required>
+            {% for user in users %}
+            <option value="{{user.id}}">{{user}}</option>
+            {% endfor %}
+            
+        </select>
         <input type="submit" name="Submit">
     </form>
     <!-- What chat room would you like to enter?<br>
