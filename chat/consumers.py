@@ -2,6 +2,8 @@
 import json
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import AsyncWebsocketConsumer #WebsocketConsumer
+from channels.db import database_sync_to_async
+from .models import ChatHistory, ChatRoom
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -47,6 +49,20 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 'message': message
             }
         )
+        print("Getting Chat room instance")
+        chat_room_obj = await self.get_room_object()
+        print(chat_room_obj)
+        # print("Creating Chat History")
+        # ChatHistory.objects.create(chat_room=chat_room_obj,
+        #     owner=self.scope['user'], message=message)
+        # await self.create_chat_history()
+
+    @database_sync_to_async
+    def get_room_object(self):
+        return ChatRoom.objects.get(room_name=self.room_name)
+
+    # def create_chat_history(self):
+
 
     # Receive message from room group
     async def chat_message(self, event):

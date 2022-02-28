@@ -15,3 +15,8 @@ Setup redis-server and enter url in 'settings.py' in dict 'CHANNEL_LAYERS'
 - User Authentication
 - Get or create Chat room (for 2 people only)
 - Save messages to database
+
+
+### Test accounts:
+- test_user -> testpass1
+- test_user2  -> testpass2

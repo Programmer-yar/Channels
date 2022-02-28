@@ -5,6 +5,7 @@
     <title>Chat Rooms</title>
 </head>
 <body>
+    <h3>Hi, {{ request.user }}</h3>
     <form method="POST">
         {% csrf_token %}
         What chat room would you like to enter?<br>

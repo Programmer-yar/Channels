@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -39,7 +39,7 @@ def room(request, room_name):
 	- displays the chat room if user is in participants
 	- raise "PermissionDenied" Error if user is not a participant
 	"""
-	chat_room = ChatRoom.objects.get(room_name=room_name)
+	chat_room = get_object_or_404(ChatRoom, room_name=room_name)
 	if request.user in chat_room.participants.all():
 		return render(request, 'chat/room.html', {'room_name':room_name})
 	raise PermissionDenied

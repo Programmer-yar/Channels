@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils import timezone
 
 class ChatRoom(models.Model):
     participants = models.ManyToManyField(User, related_name='chat_rooms')
@@ -14,4 +15,8 @@ class ChatHistory(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE,
         related_name='chats')
     message = models.TextField()
+    date_added = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        verbose_name_plural = 'Chat Histories'
     
